@@ -41,7 +41,7 @@ class App extends Component {
     }
     else {
       this.setState({ displaySearch: !false })
-      let searchedCustomers = this.state.allUsers.filter(customer => customer.FirstName.toLowerCase() == text2 || customer.LastName.toLowerCase() == text2 || customer.PhoneNumber.toLowerCase() == text2 || customer.DomainName.toLowerCase() == text2 || customer.Email.toLowerCase() == text2 || customer.LastLogin.toLowerCase() == text2 || customer.PaymentMethod.toLowerCase() == text2 || customer.Gender.toLowerCase() == text2 || customer.CreditCardType.toLowerCase() == text2 || customer.CreditCardNumber.toLowerCase() == text2 || customer.URL.toLowerCase() == text2 || customer.MacAddress.toLowerCase() == text2 || customer.Longitude.toLowerCase() == text2 || customer.Latitude.toLowerCase() == text2);
+      let searchedCustomers = this.state.allUsers.filter(customer => customer.FirstName.toLowerCase() == text2 || customer.LastName.toLowerCase() == text2 || customer.PhoneNumber == text2 || customer.DomainName.toLowerCase() == text2 || customer.Email.toLowerCase() == text2 || customer.LastLogin.toLowerCase() == text2 || customer.PaymentMethod.toLowerCase() == text2 || customer.Gender.toLowerCase() == text2 || customer.CreditCardType == text2 || customer.CreditCardNumber == text2 || customer.URL.toLowerCase() == text2 || customer.MacAddress.toLowerCase() == text2 || customer.Longitude == text2 || customer.Latitude == text2);
       this.setState({ searchedCustomers })
       console.log('Searched Customer is ', searchedCustomers)
     }
