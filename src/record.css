@@ -1,0 +1,172 @@
+
+.bordered {
+  border: px solid #cccccc;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 1px 1px #cccccc;
+}
+table {
+  border-spacing: 0;
+
+}
+.bordered td:first-child {
+  border-radius: 6px 0 0 0;
+  -moz-border-radius: 6px 0 0 0;
+  -webkit-border-radius: 6px 0 0 0;
+}
+
+.bordered td:last-child {
+  border-radius: 0 6px 0 0;
+  -moz-border-radius: 0 6px 0 0;
+  -webkit-border-radius: 0 6px 0 0;
+}
+
+.bordered td:first-child {
+ border-left: 1px solid #cccccc;
+ 
+}
+
+.bordered td:last-child {
+  border-right: 1px solid #cccccc;
+
+}
+.bordered th {
+  background-color: #dce9f9;
+  background-image: -moz-linear-gradient(center top, #f8f8f8, #ececec);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 bottom,
+    from(#f8f8f8),
+    to(#ececec),
+    color-stop(0.4, #f8f8f8)
+  );
+  border-top: medium none;
+}
+
+.bordered td,
+.bordered th {
+  color: #206bdb;
+  border-top: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+/* [data-label="Phone Number"]::before {
+  content: "call ";
+} */
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 0.5px solid #206bdb;
+  padding: 0.25em;
+}
+
+table tr:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+table th,
+table td {
+  padding: 0.125em;
+  text-align: left;
+  font-size: 0.65em;
+  justify-content: space-between;
+}
+
+ table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    /* content: attr(data-label); */
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: #6a9ce6;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+::placeholder{
+  color: #206bdb;
+}
+
+
+@media screen and (max-width: 600px) {
+  table {
+    width: 420px;
+    margin: 30px;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  .bordered td {
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  /* [data-label="Phone Number"]::before {
+    content: "call ";
+  } */
+
+  table tr:hover {
+    cursor: pointer;
+    background-color: #e5e5e5;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  
+
+  /* [data-label="Phone Number"]::before {
+    content: " call  ";
+  } */
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    /* content: attr(data-label); */
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  [data-label="Address"] {
+    display: none;
+  }
+
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  tr:nth-child(even) {
+    background-color: red;
+  }
+}
