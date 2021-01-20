@@ -36,12 +36,12 @@ class App extends Component {
   handleChange = (e) => {
     let text = e.target.value
     let text2 = text.toLowerCase().trim()
-    if (e.target.value === '') {
+    if (e.target.value == '') {
       this.setState({ displaySearch: false })
     }
     else {
       this.setState({ displaySearch: !false })
-      let searchedCustomers = this.state.allUsers.filter(customer => customer.FirstName.toLowerCase() == text2 || customer.LastName.toLowerCase() == text2 || customer.PhoneNumber == text2 || customer.DomainName.toLowerCase() == text2 || customer.Email.toLowerCase() == text2 || customer.LastLogin.toLowerCase() == text2 || customer.PaymentMethod.toLowerCase() == text2 || customer.Gender.toLowerCase() == text2 || customer.CreditCardType == text2 || customer.CreditCardNumber == text2 || customer.URL.toLowerCase() == text2 || customer.MacAddress.toLowerCase() == text2 || customer.Longitude == text2 || customer.Latitude == text2);
+      let searchedCustomers = this.state.allUsers.filter(customer => customer.FirstName.toLowerCase().includes(text2) || customer.LastName.toLowerCase().includes(text2) || customer.PhoneNumber.toLowerCase().includes(text2) || customer.DomainName.toLowerCase().includes(text2) || customer.CreditCardNumber.toLowerCase().includes(text2) || customer.CreditCardType.toLowerCase().includes(text2) || customer.URL.toLowerCase().includes(text2) || customer.PaymentMethod.toLowerCase().includes(text2) || customer.Longitude == text2 || customer.Latitude == text2 || customer.LastLogin.toLowerCase().includes(text2) || customer.MacAddress.toLowerCase().includes(text2));
       this.setState({ searchedCustomers })
       console.log('Searched Customer is ', searchedCustomers)
     }
@@ -61,13 +61,6 @@ class App extends Component {
 
 
     const { filterStr, paymentStr } = this.state;
-
-    // const filteredElements =  allUsers
-    //   .filter(e => e.includes(filterStr))
-    //   .map(e => <li>{e}</li>)
-
-    // const filteredElements = allUsers.filter(e => e.includes(filterStr))
-    //   .map(e => <li>{e}</li>)
     console.log(allUsers)
     const genderFilter = allUsers.filter(function (hero) {
       console.log(filterStr)
@@ -157,13 +150,13 @@ class App extends Component {
                   <th scope="row">FirstName</th>
                   <th scope="row">LastName</th>
                   <th>Gender</th>
-                  <th>Lat</th>
-                  <th>Long</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
                   <th>CCNumber</th>
-                  <th>CCType</th>
+                  <th>CreditCardType</th>
                   <th>Email</th>
                   <th>DomainName</th>
-                  <th>Phone</th>
+                  <th>PhoneNumber</th>
                   <th>MacAddress</th>
                   <th>URL</th>
                   <th>UserName</th>
@@ -193,7 +186,7 @@ class App extends Component {
                     </tr>
                   )
                 })}
-                {this.state.searchedCustomers.map(item => {
+                {this.state.displaySearch == true && this.state.searchedCustomers.map(item => {
                   return (
                     <tr>
                       <td>{item.FirstName}</td>
